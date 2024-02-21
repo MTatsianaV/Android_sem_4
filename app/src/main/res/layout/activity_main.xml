@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTintMode="add"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bagira"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameInputLayout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:counterMaxLength="40"
+        app:endIconMode="clear_text"
+        app:counterEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/username"
+            style="@style/TextView"
+            android:hint="Имя"
+            android:inputType="text"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phoneInputLayout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        style="@style/TextViewPhone"
+        app:errorEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phone"
+            style="@style/TextView"
+            android:hint="Номер телефона"
+            android:inputType="phone"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RadioGroup
+        android:id="@+id/gender"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneInputLayout">
+
+        <TextView
+            android:id="@+id/header"
+            style="@style/TextView"
+            android:padding="5dp"
+            android:text="Пол:" />
+
+        <RadioButton
+            android:id="@+id/male"
+            style="@style/TextView"
+            android:checked="false"
+            android:text="М"
+            />
+
+        <RadioButton
+            android:id="@+id/female"
+            style="@style/TextView"
+            android:checked="false"
+            android:text="Ж" />
+    </RadioGroup>
+
+    <Switch
+        android:id="@+id/notifications"
+        style="@style/TextViewPrimary"
+        android:checked="false"
+        android:orientation="vertical"
+        android:padding="@dimen/text_16_margin"
+        android:text="Получать уведомления"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="UseSwitchCompatOrMaterialXml"
+        app:layout_constraintTop_toBottomOf="@+id/gender" />
+
+    <CheckBox
+        android:id="@+id/authorization"
+        style="@style/TextViewPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:buttonTint="@color/myTurquoise"
+        android:checked="false"
+        app:layout_constraintTop_toBottomOf="@+id/notifications"
+        android:text="Об авторизации на устройстве">
+    </CheckBox>
+
+    <CheckBox
+        android:id="@+id/offers"
+        style="@style/TextViewPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:buttonTint="@color/myTurquoise"
+        android:checked="false"
+        app:layout_constraintTop_toBottomOf="@+id/authorization"
+        android:text="О новинках и предложениях">
+    </CheckBox>
+
+
+    <TextView
+        android:id="@+id/PointsText"
+        android:textAppearance="@style/TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Баллы"
+        app:layout_constraintStart_toStartOf="@+id/offers"
+        app:layout_constraintTop_toBottomOf="@+id/offers"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/PointsOfNumber"
+        android:textAppearance="@style/TextViewPoints"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="%d/100"
+        app:layout_constraintEnd_toEndOf="@+id/progressBar"
+        app:layout_constraintTop_toTopOf="@+id/PointsText"/>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/nameInputLayout"
+        app:layout_constraintEnd_toEndOf="@id/phoneInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/PointsText"
+        tools:visibility="visible" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_shape"
+        android:layout_margin="@dimen/text_16_margin"
+        android:enabled="false"
+        android:text="Сохранить"
+        app:layout_constraintEnd_toEndOf="@id/phoneInputLayout"
+        app:layout_constraintStart_toStartOf="@+id/nameInputLayout"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

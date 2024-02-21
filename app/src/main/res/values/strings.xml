@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Seminar_4</string>
+    <string name="changes_saved">Изменения сохранены</string>
+    <string name="points_of_number">%d/100</string>
+</resources>

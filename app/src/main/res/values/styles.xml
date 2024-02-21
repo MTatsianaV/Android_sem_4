@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextView" parent="TextAppearance.AppCompat">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/myBlack</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextViewPrimary" parent="TextView">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/myBlack</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    
+    <style name="ViewPoints" parent="TextView">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_margin">16dp</item>
+    </style>
+
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@color/myViolet</item>
+    </style>
+
+
+
+    <style name="namePoints" parent="TextView">
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:layout_margin">16dp</item>
+    </style>
+    
+    <style name="TextViewPoints" parent="TextView">
+        <item name="android:textColor">@color/myGray</item>
+    </style>
+
+    <style name="TextViewPhone" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:textColor">@color/myBlack</item>
+        <item name="boxBackgroundColor">#BB86FC</item>
+    </style>
+
+    <style name="CheckBox" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:layout_width">300dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="backgroundTint">@color/myTurquoise</item>
+    </style>
+</resources>
